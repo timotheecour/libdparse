@@ -7302,6 +7302,7 @@ protected:
 
     template traceEnterAndExit(string fun)
     {
+        //TODO: do indentation; use print clickable; fileName; make it a passable callback
         enum traceEnterAndExit = `version (std_parser_verbose) { _traceDepth++; trace("`
             ~ `\033[01;32m` ~ fun ~ `\033[0m"); }`
             ~ `version (std_parser_verbose) scope(exit) { trace("`
@@ -7466,7 +7467,7 @@ protected:
         return node;
     };
 
-    const(Token)[] tokens;
+    public const(Token)[] tokens;
     int suppressMessages;
     size_t index;
     int _traceDepth;
